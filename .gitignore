@@ -10,9 +10,15 @@ dist/
 build/
 
 # SSL Certificates
-certs/
-*.pem
-*.key
+# certs/
+# *.pem
+# *.key
+
+# Fichiers JavaScript compilés
+*.js.map
+backend/dist/
+frontend/dist/
+backend/src/**/*.js
 
 # Database
 db_data/

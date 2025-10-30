@@ -4,13 +4,13 @@ import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
-import publicRouter from './routes/public.ts'
-import {ensureAdmin} from '../db/initAdmin.ts'
-import usersRouter from './routes/users.ts'
+import publicRouter from './routes/public.js'
+import {ensureAdmin} from './db/initAdmin.js'
+import usersRouter from './routes/users.js'
 import 'dotenv/config'
-import authRouter from './routes/auth.ts'
-import { verifyToken } from './midlleware/token-management.ts'
-import { requireAdmin } from './midlleware/auth-admin.ts'
+import authRouter from './routes/auth.js'
+import { verifyToken } from './midlleware/token-management.js'
+import { requireAdmin } from './midlleware/auth-admin.js'
 // Création de l’application Express
 const app = express()
 // Ajout manuel des principaux en-têtes HTTP de sécurité
@@ -34,7 +34,7 @@ app.use(express.json())
 app.use(cookieParser())
 // Configuration CORS : autoriser le front Angular en HTTPS local
 app.use(cors({
-origin: 'https://localhost:4200',
+origin: 'https://localhost:8080',
 credentials: true,
 methods: ['GET', 'POST', 'PUT', 'DELETE'],
 allowedHeaders: ['Content-Type', 'Authorization']
