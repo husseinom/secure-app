@@ -34,7 +34,7 @@ services:
       JWT_SECRET: "mon_secret_jwt_super_long_et_complexe"
       JWT_EXPIRATION: "15m"
       REFRESH_EXPIRATION: "7d"
-      FRONTEND_URL: http://localhost:8080
+      FRONTEND_URL: https://localhost:8080
     volumes:
       - ./backend/certs:/app/certs:ro
     ports:
@@ -54,7 +54,10 @@ services:
     depends_on:
       - backend # le backend doit être prêt avant le front
     ports:
-      - "8080:80" # le front est accessible sur http://localhost:8080
+      - "8080:443" # le front est accessible sur https://localhost:8080
+    volumes:
+      # ✅ CORRIGER : Monter les certificats au bon endroit
+      - ./backend/certs:/etc/nginx/certs:ro
     networks:
       - secure_net # partage du réseau avec backend et db
 
