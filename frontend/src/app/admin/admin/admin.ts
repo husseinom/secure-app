@@ -16,9 +16,9 @@ export class Admin {
 
   constructor(){
     effect(()=> {
-      if(!this.isLoading() && this.error()===null && this.userService.users().length ===0){
+      // if(!this.isLoading() && this.error()===null && this.userService.users().length ===0){
         this.userService.getUsers();
-      }
+      // }
       })
   }
 

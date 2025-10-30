@@ -1,8 +1,8 @@
 import { Router } from 'express'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
-import pool from '../../db/database.ts'
-import { verifyToken, createAccessToken, createRefreshToken } from '../midlleware/token-management.ts'
+import {pool} from '../db/database.js'
+import { verifyToken, createAccessToken, createRefreshToken } from '../midlleware/token-management.js'
 
 const router = Router()
 router.post('/login', async (req, res) => { // --- LOGIN ---
