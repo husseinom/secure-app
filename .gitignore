@@ -18,6 +18,8 @@ build/
 *.js.map
 backend/dist/
 frontend/dist/
+backend/src/**/*.js
+backend/db/**/*.js
 
 # Database
 db_data/
