@@ -1,4 +1,4 @@
-# 🔐 Secure Angular + Express Application
+# 🔐 Secure App
 
 Application web sécurisée avec authentification JWT et communication HTTPS.
 
